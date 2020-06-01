@@ -1,6 +1,6 @@
 import json
 
-with open('dnac_devices.json') as f:
+with open('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/dnac_devices.json') as f:
     devices = json.load(f)
 
 for device in devices["response"]:
