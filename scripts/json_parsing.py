@@ -1,17 +1,4 @@
 import json
-import unittest
-
-# Class defined for unittesting
-class TestParse(unittest.TestCase):
-    def test_parse(self,result):
-        expected_names = ["ACCT100","ACCT200","ACCT300"]
-        expected_paid = ["60","70","0"]
-        expected_due = ["100","60","0"]
-
-        expected_list = [expected_names,expected_paid,expected_due]
-
-        self.assertEqual(result,expected_list)
-
 
 def print_json():
 
@@ -36,12 +23,7 @@ def print_json():
 
 if __name__ == "__main__":
 
-    result = print_json()
-
-    test = TestParse()
-    test.test_parse(result)
-
-    print("Everything Good!")
+    print_json()
 
 
 

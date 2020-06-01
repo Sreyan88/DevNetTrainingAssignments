@@ -1,17 +1,4 @@
 import xml.etree.ElementTree as ET
-import unittest
-
-# Class defined for unittesting
-class TestParse(unittest.TestCase):
-    def test_parse(self,result):
-        expected_names = ["ACCT400","ACCT500","ACCT600"]
-        expected_paid = ["600","70","0"]
-        expected_due = ["10000","40","0"]
-
-        expected_list = [expected_names,expected_paid,expected_due]
-
-        self.assertEqual(result,expected_list)
-
 
 
 def print_xml():
@@ -42,9 +29,4 @@ def print_xml():
 
 if __name__ == "__main__":
 
-    result = print_xml()
-
-    test = TestParse()
-    test.test_parse(result)
-
-    print("Everything Good!")
+    print_xml()
