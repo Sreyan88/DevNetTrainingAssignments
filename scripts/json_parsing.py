@@ -1,6 +1,7 @@
 import json
 import unittest
 
+# Class defined for unittesting
 class TestParse(unittest.TestCase):
     def test_parse(self,result):
         expected_names = ["ACCT100","ACCT200","ACCT300"]
@@ -17,10 +18,10 @@ def print_json():
     names = []
     paid=[]
     due=[]
-
+    # Opening the file
     with open('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/db.json') as f:
         accounts = json.load(f)
-
+    # Parsing
     for account in accounts:
         print("Account name is :" + account)
         print("Paid amount for account is:" + str(accounts[account]["paid"]))

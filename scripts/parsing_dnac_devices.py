@@ -1,6 +1,7 @@
 import json
 import unittest
 
+# Class defined for unittesting
 class TestParse(unittest.TestCase):
     def test_parse(self,result):
         expected_devids = ["1904ca0d-01be-4d13-88e5-4f4f9980b512","181a0fcb-e56e-4833-a92a-ec9932be427c","3ab79a68-4a3a-4cdc-b41e-eb98dabcdb84","7efadae4-0023-434f-8ae6-0bbc3c51ff2c","ea400390-f224-4587-a11e-a941c68bd141"]
@@ -17,9 +18,11 @@ def print_dnac_devices():
     softype=[]
     management=[]
 
+    # Opening the file
     with open('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/dnac_devices.json') as f:
         devices = json.load(f)
-
+    
+    # Parsing the json
     for device in devices["response"]:
         print("Device ID is :" + str(device["id"]))
         print("Device Family is :" + str(device["family"]))
@@ -38,6 +41,7 @@ if __name__ == "__main__":
 
     result = print_dnac_devices()
 
+    # Unittesting
     test = TestParse()
     test.test_parse(result)
 

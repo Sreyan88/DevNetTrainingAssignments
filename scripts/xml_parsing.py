@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import unittest
 
+# Class defined for unittesting
 class TestParse(unittest.TestCase):
     def test_parse(self,result):
         expected_names = ["ACCT400","ACCT500","ACCT600"]
@@ -19,9 +20,11 @@ def print_xml():
     paid=[]
     due=[]
 
+    # Opening the file
     tree = ET.parse('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/db.xml')
     root = tree.getroot()
 
+    # Parsing
     count = 0
     for child in root:
         print ("Account name is:" + child.tag)

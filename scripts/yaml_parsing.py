@@ -2,7 +2,7 @@ import yaml
 import unittest
 
 
-
+# Class defined for unittesting
 class TestParse(unittest.TestCase):
     def test_parse(self,result):
         expected_names = ["ACCT700","ACCT800","ACCT900"]
@@ -20,10 +20,10 @@ def print_yaml():
     paid=[]
     due=[]
 
-
+    # Opening the file
     yaml_file = open("C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/db.yml")
     accounts = yaml.load(yaml_file, Loader=yaml.FullLoader)
-
+    # Parsing
     for account in accounts:
         print("Account name is :" + account)
         print("Paid amount for account is:" + str(accounts[account]["paid"]))
