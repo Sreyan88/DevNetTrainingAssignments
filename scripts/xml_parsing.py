@@ -1,32 +1,46 @@
 import xml.etree.ElementTree as ET
 
+class XML:
 
-def print_xml():
+    def __init__(self):
+        tree = ET.parse('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/db.xml')
+        root = tree.getroot()
+        self.object = root
 
-    names = []
-    paid=[]
-    due=[]
+    def testing(self):
+        root = self.object
 
-    # Opening the file
-    tree = ET.parse('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/db.xml')
-    root = tree.getroot()
+        names = []
+        paid=[]
+        due=[]
 
-    # Parsing
-    count = 0
-    for child in root:
-        print ("Account name is:" + child.tag)
-        print("Paid ammount is:"+ str(root[count][0].text))
-        print("Due ammount is:"+ str(root[count][1].text))
-        print("------------------------------------------------------------------------")
+        count = 0
+
+        for child in self.object:
+            names.append(child.tag)
+            paid.append(str(root[count][0].text))
+            due.append(str(root[count][1].text))
+            count += 1
+
+        return [names,paid,due]
+
+
+
+    def print_xml(self):
+        root = self.object
+
+        count = 0
+
+        for child in self.object:
+            print ("Account name is:" + child.tag)
+            print("Paid ammount is:"+ str(root[count][0].text))
+            print("Due ammount is:"+ str(root[count][1].text))
+            print("------------------------------------------------------------------------")
+            count += 1
     
-        names.append(child.tag)
-        paid.append(str(root[count][0].text))
-        due.append(str(root[count][1].text))
-
-        count += 1
-
-    return [names,paid,due]
 
 if __name__ == "__main__":
 
-    print_xml()
+    X= XML()
+    X.print_xml()
+

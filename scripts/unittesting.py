@@ -1,9 +1,9 @@
 import unittest
 
-from json_parsing import print_json
-from xml_parsing import print_xml
-from yaml_parsing import print_yaml
-from parsing_dnac_devices import print_dnac_devices
+from json_parsing import JSON
+from xml_parsing import XML
+from yaml_parsing import YAML
+from parsing_dnac_devices import DNAC
 
 class TestParse(unittest.TestCase):
 
@@ -48,16 +48,20 @@ class TestParse(unittest.TestCase):
 if __name__ == "__main__":
     Test = TestParse()
 
-    json_out = print_json()
+    J = JSON()
+    json_out = J.testing()
     Test.json_test(json_out)
 
-    xml_out = print_xml()
+    X = XML()
+    xml_out = X.testing()
     Test.xml_test(xml_out)
 
-    json_out = print_yaml()
-    Test.yaml_test(json_out)
+    Y = YAML()
+    yaml_out = Y.testing()
+    Test.yaml_test(yaml_out)
 
-    dnac_out = print_dnac_devices()
+    D = DNAC()
+    dnac_out = D.testing()
     Test.dnac_test(dnac_out)
 
     print("All outputs look good!")
