@@ -1,17 +1,15 @@
 import json
 
-import json_parsing
+from get_request import get_devices
 
-# Class
 class DNAC:
 
     def __init__(self):
+        
 
-        with open('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/dnac_devices.json') as f:
-            devices = json.load(f)
-
-        self.object = devices
-
+        devices = get_devices()
+        self.object = json.loads(devices)
+        
     def testing(self):
         devices= self.object
 
