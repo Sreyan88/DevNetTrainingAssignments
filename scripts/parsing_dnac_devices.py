@@ -1,5 +1,8 @@
 import json
 
+import json_parsing
+
+# Class
 class DNAC:
 
     def __init__(self):
