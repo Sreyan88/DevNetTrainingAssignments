@@ -13,7 +13,7 @@ RUN echo "                       \n \
 <Directory /var/www/html>        \n \
    Options +ExecCGI              \n \
    AddHandler cgi-script .py     \n \
-   DirectoryIndex scripts/index.py       \n \
+   DirectoryIndex index.py       \n \
 </Directory>                     \n \
 " >> /etc/apache2/apache2.conf
 
