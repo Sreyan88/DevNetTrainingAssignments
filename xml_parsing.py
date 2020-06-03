@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 class XML:
 
     def __init__(self):
-        tree = ET.parse('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/db.xml')
+        tree = ET.parse('data/db.xml')
         root = tree.getroot()
         self.object = root
 

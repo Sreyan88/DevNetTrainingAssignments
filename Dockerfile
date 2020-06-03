@@ -19,7 +19,7 @@ RUN echo "                       \n \
 
 RUN service apache2 restart
 
-COPY ./ /scripts/var/www/html
+COPY ./ /var/www/html
 
 RUN chmod -R u+rwx,g+x,o+x /var/www/html
 

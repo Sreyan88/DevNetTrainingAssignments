@@ -3,7 +3,7 @@ import json
 class JSON:
     def __init__(self):
 
-        with open('C:/Users/Sreyan/Desktop/test-git/DevNetTrainingAssignments/data/db.json') as f:
+        with open('data/db.json') as f:
             accounts = json.load(f)
 
         self.object = accounts
