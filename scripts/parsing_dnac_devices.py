@@ -30,10 +30,11 @@ class DNAC:
         devices= self.object
 
         for device in devices["response"]:
-            print("Device ID is :" + str(device["id"]))
-            print("Device Family is :" + str(device["family"]))
-            print("Device Software Type is :" + str(device['softwareType']))
-            print("Device Management IP Address  is :" + str(device['managementIpAddress']))
+            print("<h3>Printing Device Details</h3>")
+            print("<h3>Device ID is </h3><br><br>{}".format((str(device["id"]))))
+            print("<h3>Device Family is </h3><br><br>{}".format(str(device["family"])))
+            print("<h3>Device Software Type is </h3><br><br>{}".format(str(device['softwareType'])))
+            print("<h3>Device Management IP Address  is </h3><br><br>{}".format(str(device['managementIpAddress'])))
             print("------------------------------------------------------------------------")
 
 
