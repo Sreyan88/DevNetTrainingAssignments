@@ -1,4 +1,16 @@
 import requests
+import json
+
+def get_key():
+  url = "https://sandboxdnac2.cisco.com/api/system/v1/auth/token"
+  payload = {}
+  headers = {
+  'Authorization': 'Basic ZG5hY2RldjpEM3Y5M1RAd0sh'
+  }
+  response = requests.request("POST", url, headers=headers, data = payload)
+  response = json.loads(response.text)
+
+  return(response["Token"])
 
 
 def get_devices():
@@ -6,9 +18,11 @@ def get_devices():
 
   url = "https://sandboxdnac2.cisco.com/dna/intent/api/v1/network-device"
 
+  key = get_key()
+
   payload = {}
   headers = {
-  'x-auth-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1ZWNlNTc5ODc1MTYxMjAwY2M1NzA2M2QiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjVlNWE0MzI1NzUxNjEyMDBjYzRhYzk1ZSJdLCJ0ZW5hbnRJZCI6IjVlNWE0MzI1NzUxNjEyMDBjYzRhYzk1YyIsImV4cCI6MTU5MTE4ODg4MiwiaWF0IjoxNTkxMTg1MjgyLCJqdGkiOiJjM2ZjMjlkMS0zMmRlLTQ2NmUtODJjNC1jOWMwZmVjNzgwYTEiLCJ1c2VybmFtZSI6ImRuYWNkZXYifQ.pMCXNBuJRjrlOmuBgc2qfirQ2Yx4tI_UGi7f8Vh9UBtjjHzG8ByuCf1TeExB4w9FKI7WCCbOH3id2czjy8kLs3_R4TMY7M2c73L9JV5tSsaY2zPLNKEe7Q7DtXnU_7hsHCK00gwYByDTuYweo5oxNmGwlDZFu1AcvH9wodI-iG1NYFmX-wNztwgEXvN5mvf2a9xONKQrtn26Yvv5eZxuMqXn8bKapHCV7pUODn9y7EuPSnoEP2ybScWNxvjsqGbEgectnoWmwjlQWzQo30OeCJGbA83xk1QvePbRv1-R-1dLX_BmJkVA6DyRZSGckdnqctrTjJl4SJIj7tpcaGeuVA'
+  'x-auth-token': key
 }
 
   response = requests.request("GET", url, headers=headers, data = payload)
