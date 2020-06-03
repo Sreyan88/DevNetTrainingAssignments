@@ -32,11 +32,13 @@ class XML:
         count = 0
 
         for child in self.object:
-            print ("Account name is:" + child.tag)
-            print("Paid ammount is:"+ str(root[count][0].text))
-            print("Due ammount is:"+ str(root[count][1].text))
+            print("<h3>Printing Device Details</h3>")
+            print ("<h3>Account name is</h3><br><br>{}".format(child.tag))
+            print("<h3>Paid ammount is</h3><br><br>{}".format(str(root[count][0].text)))
+            print("<h3>Due ammount is</h3><br><br>{}".format(str(root[count][1].text)))
             print("------------------------------------------------------------------------")
             count += 1
+            print("<h3>Device Details Printed</h3>")
     
 
 if __name__ == "__main__":

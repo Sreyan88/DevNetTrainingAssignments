@@ -6,7 +6,6 @@ class DNAC:
 
     def __init__(self):
         
-
         devices = get_devices()
         self.object = json.loads(devices)
         

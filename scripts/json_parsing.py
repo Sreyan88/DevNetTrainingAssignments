@@ -26,10 +26,12 @@ class JSON:
         accounts = self.object
 
         for account in accounts:
-            print("Account name is :" + account)
-            print("Paid amount for account is:" + str(accounts[account]["paid"]))
-            print("Due amount for account is:" + str(accounts[account]["due"]))
+            print("<h3>Printing Device Details</h3>")
+            print("<h3>Account name is</h3><br><br>{}".format(account))
+            print("<h3>Paid amount for account is</h3><br><br>{}".format(str(accounts[account]["paid"])))
+            print("<h3>Due amount for account is</h3><br><br>{}".format(str(accounts[account]["due"])))
             print("------------------------------------------------------------------------")
+            print("<h3>Device Details Printed</h3>")
 
 
 
