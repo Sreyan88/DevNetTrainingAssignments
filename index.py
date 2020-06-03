@@ -1,3 +1,6 @@
+print("Content-Type: text/html")
+print()
+
 from json_parsing import JSON
 from xml_parsing import XML
 from yaml_parsing import YAML
