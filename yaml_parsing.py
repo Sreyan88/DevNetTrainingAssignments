@@ -4,7 +4,7 @@ import yaml
 class YAML:
 
     def __init__(self):
-        yaml_file = open("data/db.yml")
+        yaml_file = open("./data/db.yml")
         accounts = yaml.load(yaml_file, Loader=yaml.FullLoader)
         self.object = accounts
 
